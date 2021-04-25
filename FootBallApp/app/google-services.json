@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "130687034862",
+    "project_id": "footballapp-baada",
+    "storage_bucket": "footballapp-baada.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130687034862:android:fd454e31ac1119ada0daff",
+        "android_client_info": {
+          "package_name": "com.example.footballapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130687034862-rdu9mr5mv44aqlf0ks1r2ju22m9np5ue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.footballapp",
+            "certificate_hash": "cea7797a6fa63a4bab48dffed20849ad787b4c44"
+          }
+        },
+        {
+          "client_id": "130687034862-6tn1a3slnugepe57pba6bq568u5eg942.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClNXAxsAcWaOqxGyoC-BJA-3G2nSFTEig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130687034862-6tn1a3slnugepe57pba6bq568u5eg942.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
