@@ -20,5 +20,7 @@
     <string name="search_team_news">Search Twitter for Sports News!</string>
     <string name="search_tweets">search tweets</string>
     <string name="click_to_search_team_news">Click to search Team News!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

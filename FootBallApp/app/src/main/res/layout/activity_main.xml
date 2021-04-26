@@ -217,10 +217,10 @@
                         android:id="@+id/imageButton_Article"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/ic_baseline_article_24"
                         android:layout_gravity="center"
+                        android:onClick="toArticle"
                         android:background="@android:color/transparent"
-                        />
+                        app:srcCompat="@drawable/ic_baseline_article_24" />
                 </LinearLayout>
 
 

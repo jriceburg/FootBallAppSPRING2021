@@ -61,6 +61,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intentTwitter)
     }
 
+    fun toArticle(view: View) {
+        val intentArticle = Intent(this, ArticleActivity::class.java)
+        startActivity(intentArticle)
+    }
+
 
     private fun startLoginUser() {
         val intentRegister = Intent(this, LogInActivity::class.java)
