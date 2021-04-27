@@ -66,6 +66,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intentArticle)
     }
 
+    fun toUserActivity(view: View) {
+        val intentArticle = Intent(this, UserActivity::class.java)
+        startActivity(intentArticle)
+    }
+
 
     private fun startLoginUser() {
         val intentRegister = Intent(this, LogInActivity::class.java)

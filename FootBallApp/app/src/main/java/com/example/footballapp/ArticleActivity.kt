@@ -28,15 +28,6 @@ class ArticleActivity : AppCompatActivity() {
         transaction.commit()
 
 
-        // landscape
-        if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.webContainer,WebViewFragment())
-                .addToBackStack(null)
-                .commit()
-
-        }
-
         viewModel = ViewModelProvider(this).get(ArticleViewModel::class.java)
 
         //viewModel = ViewModelProvider(requireActivity()).get(ArticleViewModel::class.java)

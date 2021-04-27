@@ -166,6 +166,7 @@
                         android:id="@+id/imageButton_Profile"
                         android:layout_width="110dp"
                         android:layout_height="110dp"
+                        android:onClick="toUserActivity"
                         app:srcCompat="@drawable/ic_baseline_settings_24"
                         android:background="@android:color/transparent"
                         android:layout_gravity="center"
