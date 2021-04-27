@@ -1,16 +1,18 @@
 package com.example.footballapp
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 
-class ArticleAdapter(val context: Context, val articles : ArrayList<ArticleData>):RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
-
-    //var viewModel = ViewModelProvider(context).get(ArticleViewModel::class.java)
+class ArticleAdapter(val context: Context, private val articles : ArrayList<ArticleData>):RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
+    // val context: Context,
+    //var viewModel = ViewModelProvider(parentLayout).get(ArticleViewModel::class.java)
 
     inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -20,8 +22,18 @@ class ArticleAdapter(val context: Context, val articles : ArrayList<ArticleData>
         val articleURL = itemView.findViewById<TextView>(R.id.tv_article_url)
 
         init {
-            itemView.setOnClickListener {
+            itemView.setOnClickListener { v->
                 val selectedItem = adapterPosition
+                val bundle = Bundle()
+
+                val myMessage = articles[selectedItem].url
+                bundle.putString("URL", myMessage)
+                WebViewFragment().arguments = bundle
+
+                val activity: AppCompatActivity = v?.context as AppCompatActivity
+                activity.supportFragmentManager.beginTransaction()
+                    .replace(R.id.mainContainer, WebViewFragment()).addToBackStack(null).commit()
+
 
             }
         }
@@ -40,9 +52,8 @@ class ArticleAdapter(val context: Context, val articles : ArrayList<ArticleData>
         val currentItem = articles[position]
 
         holder.articleTitle.text = currentItem.title
-        holder.articleTitle.setOnClickListener {
-
-        }
+        //holder.articleTitle.setOnClickListener {
+        //}
         holder.articleURL.text = "Read more here..... "
     }
 

@@ -25,8 +25,8 @@ class ArticleListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val data = ArticleData("Sports Article","https://www.theguardian.com/football/2021/apr/26/premier-league-and-carabao-cup-10-talking-points-from-the-weekend")
-        val data2 = ArticleData("Sports Article two","https://www.theguardian.com/us/sport")
+        val data = ArticleData("Sports Article","https://www.youtube.com/watch?v=A95oQi66JIk")
+        val data2 = ArticleData("Sports Article two","https://www.youtube.com/watch?v=A95oQi66JIk")
         val dataArray = ArrayList<ArticleData>()
         dataArray.add(data)
         dataArray.add(data2)
@@ -37,7 +37,7 @@ class ArticleListFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_article_list, container, false)
 
         recyclerView = root.findViewById(R.id.recyclerView)
-        val customAdapter = ArticleAdapter(dataArray)
+        val customAdapter = ArticleAdapter(requireContext(),dataArray)
         recyclerView.adapter = customAdapter
         recyclerView.layoutManager = LinearLayoutManager(root.context, LinearLayoutManager.VERTICAL,false)
 

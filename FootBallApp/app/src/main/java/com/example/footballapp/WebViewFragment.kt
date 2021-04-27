@@ -2,6 +2,7 @@ package com.example.footballapp
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,8 @@ import androidx.fragment.app.Fragment
 
 
 class WebViewFragment : Fragment() {
+
+    private val TAG = "WebView"
 
     lateinit var webview: WebView
     private var linkURL: String = "https://www.theguardian.com/us/sport"
@@ -53,17 +56,23 @@ class WebViewFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_web_view, container, false)
 
         webview = root.findViewById(R.id.webView)
-        webViewSetup()
+
+        val urlString = arguments?.getString("URL")
+        Log.d(TAG, " URL: $urlString")
+
+
+        webViewSetup(linkURL)
+
 
         return root
     }
 
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun webViewSetup() {
+    private fun webViewSetup(param: String) {
         webview.webViewClient = WebViewClient()
         webview.apply {
-            loadUrl(linkURL)
+            loadUrl(param)
             settings.javaScriptEnabled = true
             settings.builtInZoomControls = true
             settings.safeBrowsingEnabled = true
