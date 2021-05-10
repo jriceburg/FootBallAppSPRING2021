@@ -2,6 +2,7 @@ package com.example.footballapp
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 
-class ArticleAdapter(val context: Context, private val articles : ArrayList<ArticleData>):RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
+class ArticleAdapter(  val context: Context, private val articles : ArrayList<ArticleData>):RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
+
+    private val TAG = "ArticleAdapter"
+
     // val context: Context,
     //var viewModel = ViewModelProvider(parentLayout).get(ArticleViewModel::class.java)
 
@@ -26,14 +30,18 @@ class ArticleAdapter(val context: Context, private val articles : ArrayList<Arti
                 val selectedItem = adapterPosition
                 val bundle = Bundle()
 
-                val myMessage = articles[selectedItem].url
-                bundle.putString("URL", myMessage)
-                WebViewFragment().arguments = bundle
+                val myMessage = articles[selectedItem].url.toString()
+                Log.d(TAG, " my message: $myMessage")
+
+
+                //bundle.putString("URL", "myMessage")
+                //WebViewFragment().arguments = bundle
+
 
                 val activity: AppCompatActivity = v?.context as AppCompatActivity
                 activity.supportFragmentManager.beginTransaction()
-                    .replace(R.id.mainContainer, WebViewFragment()).commit()
-                //.addToBackStack(null)
+                    .replace(R.id.mainContainer, WebViewFragment(articles[selectedItem].url.toString())).addToBackStack(null).commit()
+
 
             }
         }
@@ -60,4 +68,9 @@ class ArticleAdapter(val context: Context, private val articles : ArrayList<Arti
     override fun getItemCount(): Int {
         return articles.size
     }
+
+    interface OnRecyclerInfo{
+        fun recyclerInfo(param : String)
+    }
+
 }

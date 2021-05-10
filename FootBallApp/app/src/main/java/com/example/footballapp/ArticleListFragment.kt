@@ -34,15 +34,6 @@ class ArticleListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val data = ArticleData("Sports Article","https://www.youtube.com/watch?v=A95oQi66JIk")
-        val data2 = ArticleData("Sports Article two","https://www.youtube.com/watch?v=A95oQi66JIk")
-
-        //dataArray.add(data)
-        //dataArray.add(data2)
-        //dataArray.add(data)
-        //dataArray.add(data2)
-        //dataArray.add(data)
-        //dataArray.add(data2)
         val root = inflater.inflate(R.layout.fragment_article_list, container, false)
 
         recyclerView = root.findViewById(R.id.recyclerView)
@@ -80,9 +71,9 @@ class ArticleListFragment : Fragment() {
                 }
             })
 
-
-
         return root
     }
+
+
 
 }

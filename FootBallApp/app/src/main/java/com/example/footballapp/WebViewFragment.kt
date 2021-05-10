@@ -14,20 +14,15 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 
 
-class WebViewFragment : Fragment() {
+class WebViewFragment( url: String) : Fragment() {
+
+    val text = url
 
     private val TAG = "WebView"
+    var urlString = " "
 
     lateinit var webview: WebView
     private var linkURL: String = "https://www.theguardian.com/us/sport"
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-    }
-
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -40,11 +35,11 @@ class WebViewFragment : Fragment() {
 
         webview = root.findViewById(R.id.webView)
 
-        val urlString = arguments?.getString("URL")
-        Log.d(TAG, " URL: $urlString")
+        urlString = arguments?.getString("URL2").toString()
+        Log.d(TAG, " constructor: $text")
 
 
-        webViewSetup(linkURL)
+        webViewSetup(text)
 
 
         return root

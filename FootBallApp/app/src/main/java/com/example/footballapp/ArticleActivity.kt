@@ -9,6 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 
 class ArticleActivity : AppCompatActivity() {
 
+    private val TAG = "ArticleActivity"
+
     lateinit var viewModel: ArticleViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
