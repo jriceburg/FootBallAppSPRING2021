@@ -22,7 +22,7 @@ class WebViewFragment( url: String) : Fragment() {
     var urlString = " "
 
     lateinit var webview: WebView
-    private var linkURL: String = "https://www.theguardian.com/us/sport"
+    //private var linkURL: String = "https://www.theguardian.com/us/sport"
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -32,19 +32,14 @@ class WebViewFragment( url: String) : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_web_view, container, false)
-
         webview = root.findViewById(R.id.webView)
 
-        urlString = arguments?.getString("URL2").toString()
-        Log.d(TAG, " constructor: $text")
-
+        //urlString = arguments?.getString("URL2").toString()
+        //Log.d(TAG, " constructor: $text")
 
         webViewSetup(text)
-
-
         return root
     }
-
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun webViewSetup(param: String) {

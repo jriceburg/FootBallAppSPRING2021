@@ -15,9 +15,6 @@ class ArticleAdapter(  val context: Context, private val articles : ArrayList<Ar
 
     private val TAG = "ArticleAdapter"
 
-    // val context: Context,
-    //var viewModel = ViewModelProvider(parentLayout).get(ArticleViewModel::class.java)
-
     inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
@@ -28,20 +25,15 @@ class ArticleAdapter(  val context: Context, private val articles : ArrayList<Ar
         init {
             itemView.setOnClickListener { v->
                 val selectedItem = adapterPosition
-                val bundle = Bundle()
-
-                val myMessage = articles[selectedItem].url.toString()
-                Log.d(TAG, " my message: $myMessage")
-
-
+                //val bundle = Bundle()
+                //val myMessage = articles[selectedItem].url.toString()
+                //Log.d(TAG, " my message: $myMessage")
                 //bundle.putString("URL", "myMessage")
                 //WebViewFragment().arguments = bundle
-
 
                 val activity: AppCompatActivity = v?.context as AppCompatActivity
                 activity.supportFragmentManager.beginTransaction()
                     .replace(R.id.mainContainer, WebViewFragment(articles[selectedItem].url.toString())).addToBackStack(null).commit()
-
 
             }
         }

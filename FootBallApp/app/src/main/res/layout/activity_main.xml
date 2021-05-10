@@ -206,7 +206,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tv_2faTidddtle44"
+                        android:id="@+id/title_Article"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -240,15 +240,24 @@
                 >
 
                 <TextView
-                    android:id="@+id/tv_2faddddTitle"
+                    android:id="@+id/tv_title_chat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
-                    android:text="Two Factor Authentication (2FA)"
+                    android:text="Chat"
                     android:textSize="20sp" />
 
+                <ImageButton
+                    android:id="@+id/imageButton_Chat"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:onClick="toArticle"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_baseline_chat_24" />
 
             </androidx.cardview.widget.CardView>
             <!-- row 1 column 2 end -->

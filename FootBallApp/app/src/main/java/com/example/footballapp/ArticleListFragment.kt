@@ -40,7 +40,6 @@ class ArticleListFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(root.context, LinearLayoutManager.VERTICAL,false)
 
         articleAdapter = ArticleAdapter(requireContext(),dataArray)
-        //recyclerView.adapter = customAdapter
 
         //--------------- READ DATA ---------------------------------------------------------------
 
@@ -59,6 +58,7 @@ class ArticleListFragment : Fragment() {
                             dataArray.add(data!!)
                         }
                     }
+
 
                     Log.d(TAG, "Data: ${dataArray.size}")
                     //tipsAdapter.notifyDataSetChanged()
