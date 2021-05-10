@@ -16,14 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FootBallApp">
-        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".UserActivity" />
         <activity android:name=".ArticleActivity" />
         <activity android:name=".TwitterActivity" />
         <activity android:name=".SignUpActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".ResetActivity" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".SplashActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -32,8 +32,8 @@ class ArticleAdapter(val context: Context, private val articles : ArrayList<Arti
 
                 val activity: AppCompatActivity = v?.context as AppCompatActivity
                 activity.supportFragmentManager.beginTransaction()
-                    .replace(R.id.mainContainer, WebViewFragment()).addToBackStack(null).commit()
-
+                    .replace(R.id.mainContainer, WebViewFragment()).commit()
+                //.addToBackStack(null)
 
             }
         }

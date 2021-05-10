@@ -22,15 +22,7 @@ class ArticleActivity : AppCompatActivity() {
         transaction.replace(R.id.mainContainer, ArticleListFragment())
 
         // add the fragments to backstack so that the user may go back the previous state with back button
-        transaction.addToBackStack(null)
-
-        // Commit the transaction to apply
-        transaction.commit()
-
-
-        viewModel = ViewModelProvider(this).get(ArticleViewModel::class.java)
-
-        //viewModel = ViewModelProvider(requireActivity()).get(ArticleViewModel::class.java)
+        transaction.addToBackStack(null).commit()
 
     }
 

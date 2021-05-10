@@ -5,20 +5,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
 
     private val TAG = "MainActivity"
+    lateinit var nameDashBoard : TextView
 
     private lateinit var mAuth: FirebaseAuth
     //private lateinit var googleSignInClient: GoogleSignInClient
 
     private lateinit var firebaseDB: FirebaseDatabase
+    private lateinit var userRef: DatabaseReference
 
 
 
@@ -27,7 +29,33 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide() // hide action bar
         // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance()
+
+        nameDashBoard = findViewById(R.id.dashBoardName)
+
+        // set up realtime database
+        firebaseDB = FirebaseDatabase.getInstance()
+        userRef = firebaseDB.getReference("Users")
+
+        val userID = FirebaseAuth.getInstance().currentUser!!.uid
+
+        userRef.child(userID).addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val userData: UserSignUpData? = dataSnapshot.getValue(UserSignUpData::class.java)
+                Log.d(TAG, "username is: ${userData?.firstNameData}")
+                nameDashBoard.text = "Welcome ${userData?.firstNameData}"
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException())
+            }
+        })
+
+
+
+
 
 
     }

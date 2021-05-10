@@ -23,29 +23,12 @@ class WebViewFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (shouldInterceptBackPress()) {
-                    Toast.makeText(
-                        requireContext(),
-                        "Back press intercepted in:${this@WebViewFragment}",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    if (webview.canGoBack()) {
-                        webview.goBack()
-                    } else {
-                        //super.onBackPressed()
-                    }
-                } else {
-                    isEnabled = false
-                    activity?.onBackPressed()
-                }
-            }
-        })
+        arguments?.let {
 
+        }
     }
 
-    fun shouldInterceptBackPress() = true
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -83,3 +66,31 @@ class WebViewFragment : Fragment() {
 
 
 }
+
+/**
+
+fun shouldInterceptBackPress() = true
+
+activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
+override fun handleOnBackPressed() {
+if (shouldInterceptBackPress()) {
+Toast.makeText(
+requireContext(),
+"Back press intercepted in:${this@WebViewFragment}",
+Toast.LENGTH_SHORT
+).show()
+if (webview.canGoBack()) {
+webview.goBack()
+} else {
+//super.onBackPressed()
+}
+} else {
+isEnabled = false
+activity?.onBackPressed()
+}
+}
+})
+
+
+ */
+

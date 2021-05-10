@@ -131,11 +131,9 @@ class SignUpActivity : AppCompatActivity() {
                         Toast.makeText(this, "Welcome New User!", Toast.LENGTH_SHORT).show()
 
                         // add new user data to realtime DB using auth Uid
-                        val profileData = UserSignUpData(
-                            signUpFirstName.text.toString(),
-                            signUpLastName.text.toString(),
-                            signUpEmail.text.toString()
-                        )
+                        val profileData = UserSignUpData(signUpFirstName.text.toString(),
+                            signUpLastName.text.toString(),signUpEmail.text.toString(),"","")
+
                         //val uID = FirebaseAuth.getInstance().currentUser?.uid
                         val uID = mAuth.currentUser!!.uid
 

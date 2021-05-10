@@ -55,7 +55,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:padding="10dp"
+                android:drawablePadding="16dp"
+                android:drawableStart="@drawable/ic_baseline_person_24_green"
+                android:text="First Name" />
 
             <EditText
                 android:id="@+id/et_last_name_update"
@@ -63,7 +66,35 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:padding="10dp"
+                android:drawablePadding="16dp"
+                android:drawableStart="@drawable/ic_baseline_person_24_green"
+                android:text="Last Name" />
+
+            <EditText
+                android:id="@+id/et_age_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:drawablePadding="16dp"
+                android:drawableStart="@drawable/ic_baseline_library_books_24"
+                android:padding="10dp"
+                android:hint="Age"
+                 />
+
+            <EditText
+                android:id="@+id/et_team_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:drawablePadding="16dp"
+                android:drawableStart="@drawable/ic_baseline_language_24"
+                android:padding="10dp"
+                android:hint="Team"
+                 />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,14 +107,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Button" />
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/round_green_bg"
+                    android:onClick="updateSave"
+                    android:text="Update And Save" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Button" />
+                    android:layout_margin="5dp"
+                    android:onClick="toMainActivity"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/round_green_bg"
+                    android:textAllCaps="false"
+                    android:text="Return" />
             </LinearLayout>
 
 
